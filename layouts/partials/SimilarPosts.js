@@ -15,7 +15,6 @@ const SimilarPosts = ({ posts }) => {
               alt={post.frontmatter.title}
               width={"445"}
               height={"230"}
-              layout="responsive"
             />
           )}
           <ul className="mt-4 text-text">

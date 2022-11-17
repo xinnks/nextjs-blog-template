@@ -20,7 +20,6 @@ const Posts = ({ posts, authors, className }) => {
               alt={post.frontmatter.title}
               width={i === 0 ? "925" : "445"}
               height={i === 0 ? "475" : "230"}
-              layout="responsive"
               priority={i === 0 ? true : false}
             />
           )}
