@@ -8,29 +8,30 @@ const Logo = () => {
     config.site;
 
   return (
-    <Link href={base_url} passHref>
-      <a
-        className="navbar-brand block"
-        style={{
-          height: logo_height.replace("px", "") + "px",
-          width: logo_width.replace("px", "") + "px",
-        }}
-      >
-        {logo ? (
-          <Image
-            width={logo_width.replace("px", "") * 2}
-            height={logo_height.replace("px", "") * 2}
-            src={logo}
-            alt={title}
-            priority
-          />
-        ) : logo_text ? (
-          logo_text
-        ) : (
-          title
-        )}
-      </a>
-    </Link>
+    (<Link
+      href={base_url}
+      passHref
+      className="navbar-brand block"
+      style={{
+        height: logo_height.replace("px", "") + "px",
+        width: logo_width.replace("px", "") + "px",
+      }}>
+
+      {logo ? (
+        <Image
+          width={logo_width.replace("px", "") * 2}
+          height={logo_height.replace("px", "") * 2}
+          src={logo}
+          alt={title}
+          priority
+        />
+      ) : logo_text ? (
+        logo_text
+      ) : (
+        title
+      )}
+
+    </Link>)
   );
 };
 

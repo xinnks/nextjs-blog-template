@@ -26,10 +26,12 @@ const SimilarPosts = ({ posts }) => {
               <ul>
                 {post.frontmatter.categories.map((category, i) => (
                   <li className="inline-block" key={`category-${i}`}>
-                    <Link href={`/categories/${slugify(category)}`} passHref>
-                      <a className="mr-3 hover:text-primary">
-                        &#9635; {humanize(category)}
-                      </a>
+                    <Link
+                      href={`/categories/${slugify(category)}`}
+                      passHref
+                      className="mr-3 hover:text-primary">
+                      ▣{humanize(category)}
+
                     </Link>
                   </li>
                 ))}
@@ -37,10 +39,10 @@ const SimilarPosts = ({ posts }) => {
             </li>
           </ul>
           <h3 className="h4">
-            <Link href={`/${post.slug}`} passHref>
-              <a className="block hover:text-primary">
-                {post.frontmatter.title}
-              </a>
+            <Link href={`/${post.slug}`} passHref className="block hover:text-primary">
+
+              {post.frontmatter.title}
+
             </Link>
           </h3>
         </div>

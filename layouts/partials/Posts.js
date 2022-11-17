@@ -33,25 +33,25 @@ const Posts = ({ posts, authors, className }) => {
                     .includes(slugify(author.frontmatter.title))
                 )
                 .map((author, i) => (
-                  <Link
+                  (<Link
                     href={`/authors/${slugify(author.frontmatter.title)}`}
                     key={`author-${i}`}
                     passHref
-                  >
-                    <a className="inline-block hover:text-primary">
-                      {author.frontmatter.image && (
-                        <span className="author-image">
-                          <Image
-                            src={author.frontmatter.image}
-                            alt={author.frontmatter.title}
-                            height={50}
-                            width={50}
-                          />
-                        </span>
-                      )}
-                      <span>{author.frontmatter.title}</span>
-                    </a>
-                  </Link>
+                    className="inline-block hover:text-primary">
+
+                    {author.frontmatter.image && (
+                      <span className="author-image">
+                        <Image
+                          src={author.frontmatter.image}
+                          alt={author.frontmatter.title}
+                          height={50}
+                          width={50}
+                        />
+                      </span>
+                    )}
+                    <span>{author.frontmatter.title}</span>
+
+                  </Link>)
                 ))}
             </li>
             <li className="mb-2 mr-4 inline-block">
@@ -61,10 +61,12 @@ const Posts = ({ posts, authors, className }) => {
               <ul>
                 {post.frontmatter.categories.map((category, i) => (
                   <li className="inline-block" key={`category-${i}`}>
-                    <Link href={`/categories/${slugify(category)}`} passHref>
-                      <a className="mr-3 hover:text-primary">
-                        &#9635; {humanize(category)}
-                      </a>
+                    <Link
+                      href={`/categories/${slugify(category)}`}
+                      passHref
+                      className="mr-3 hover:text-primary">
+                      ▣{humanize(category)}
+
                     </Link>
                   </li>
                 ))}
@@ -72,10 +74,10 @@ const Posts = ({ posts, authors, className }) => {
             </li>
           </ul>
           <h3 className="mb-2">
-            <Link href={`/${post.slug}`} passHref>
-              <a className="block hover:text-primary">
-                {post.frontmatter.title}
-              </a>
+            <Link href={`/${post.slug}`} passHref className="block hover:text-primary">
+
+              {post.frontmatter.title}
+
             </Link>
           </h3>
           <p className="text-text">
